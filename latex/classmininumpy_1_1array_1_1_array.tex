@@ -1,0 +1,319 @@
+\doxysection{mininumpy.\+array.\+Array Class Reference}
+\hypertarget{classmininumpy_1_1array_1_1_array}{}\label{classmininumpy_1_1array_1_1_array}\index{mininumpy.array.Array@{mininumpy.array.Array}}
+
+
+A simplified multi-\/dimensional array class, similar to Num\+Py\textquotesingle{}s ndarray.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_ac2c8c96778803a21a07148a90525553e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a91203e9c4b113455fb9bde30de09daf0}{data}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classmininumpy_1_1array_1_1_array}{Array} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_aad51652e321a583cf458595e8d0136cd}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Provides a user-\/friendly string representation of the array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a88f7aaeaa079f1a5bae9091c3c2d2c86}{\+\_\+\+\_\+repr\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Provides an unambiguous string representation of the array object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a91ff8ed15a2ecfcea2a504be1a66dcc9}{reshape}} (self, new\+\_\+shape)
+\begin{DoxyCompactList}\small\item\em Returns a new \doxylink{classmininumpy_1_1array_1_1_array}{Array} with a different shape, without changing its data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_ad41dcbfa6b895b0b59ab5390493071d5}{transpose}} (self)
+\begin{DoxyCompactList}\small\item\em Transposes the array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a7c38dbeb12a4fcf9bc592804b2143cf9}{\+\_\+\+\_\+add\+\_\+\+\_\+}} (self, other)
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a51f577dc8a05ff51f6833d1c629a1c1e}{\+\_\+\+\_\+sub\+\_\+\+\_\+}} (self, other)
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_acf24c1551edfe92f948333e1db430ede}{\+\_\+\+\_\+mul\+\_\+\+\_\+}} (self, other)
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a5e365ecf2492e8a237b4caaaae3812fc}{\+\_\+\+\_\+truediv\+\_\+\+\_\+}} (self, other)
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_afd4f4e9c82417f984edd30e6417d3b69}{\+\_\+\+\_\+pow\+\_\+\+\_\+}} (self, other)
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a420d2e6041558142bab6593a73289793}{\+\_\+\+\_\+matmul\+\_\+\+\_\+}} (self, other)
+\begin{DoxyCompactList}\small\item\em Implements the matrix multiplication operator (@). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a547f20d528de9960704c6ba56aa4b767}{\+\_\+\+\_\+rsub\+\_\+\+\_\+}} (self, other)
+\begin{DoxyCompactList}\small\item\em Implements the right-\/side subtraction (e.\+g., scalar -\/ array). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a91203e9c4b113455fb9bde30de09daf0}{data}} = data
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_abde55f487fe1412af64c0f3bb7e761b6}{shape}} = self.\+\_\+derive\+\_\+shape(\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a91203e9c4b113455fb9bde30de09daf0}{data}})
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_af5d26f2e389c8fb295321705b65f956f}{ndim}} = len(self.\+shape)
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_ad5c6282db5f638b3560b081695caac22}{size}} = reduce(operator.\+mul, self.\+shape, 1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a36952e211cae761daffba17d4c5f75d8}{\+\_\+derive\+\_\+shape}} (self, \mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a91203e9c4b113455fb9bde30de09daf0}{data}})
+\begin{DoxyCompactList}\small\item\em Recursively determines the shape of the nested list data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_ac086abf24247b34e73263d7086dbad0c}{\+\_\+validate\+\_\+shape}} (self, \mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a91203e9c4b113455fb9bde30de09daf0}{data}}, \mbox{\hyperlink{classmininumpy_1_1array_1_1_array_abde55f487fe1412af64c0f3bb7e761b6}{shape}}, level)
+\begin{DoxyCompactList}\small\item\em Recursively validates that all sub-\/arrays at a certain depth have the same length. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_ab3a8bbec0b1102d42046d73f948e1352}{\+\_\+flatten}} (self)
+\begin{DoxyCompactList}\small\item\em Flattens the multi-\/dimensional data into a 1D list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a871e07e81221537b832a95ec14e77af7}{\+\_\+elementwise\+\_\+op}} (self, other, op)
+\begin{DoxyCompactList}\small\item\em A helper function to perform elementwise operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simplified multi-\/dimensional array class, similar to Num\+Py\textquotesingle{}s ndarray. 
+
+This class wraps a Python list (or nested lists) and provides methods for basic array manipulation, such as shape, transpose, and elementwise operations. 
+
+\label{doc-constructors}
+\Hypertarget{classmininumpy_1_1array_1_1_array_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmininumpy_1_1array_1_1_array_ac2c8c96778803a21a07148a90525553e}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_ac2c8c96778803a21a07148a90525553e} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classmininumpy_1_1array_1_1_array}{Array} class. 
+
+Initializes an array from a list or nested list. It validates the data, determines the shape, and calculates the total size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A Python list or nested list. @raises Type\+Error if data is not a list. @raises Value\+Error if rows have inconsistent lengths. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classmininumpy_1_1array_1_1_array_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmininumpy_1_1array_1_1_array_a7c38dbeb12a4fcf9bc592804b2143cf9}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_add\_\_@{\_\_add\_\_}}
+\index{\_\_add\_\_@{\_\_add\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_add\_\_()}{\_\_add\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a7c38dbeb12a4fcf9bc592804b2143cf9} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+add\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{other}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmininumpy_1_1array_1_1_array_a420d2e6041558142bab6593a73289793}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_matmul\_\_@{\_\_matmul\_\_}}
+\index{\_\_matmul\_\_@{\_\_matmul\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_matmul\_\_()}{\_\_matmul\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a420d2e6041558142bab6593a73289793} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+matmul\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Implements the matrix multiplication operator (@). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{classmininumpy_1_1array_1_1_array}{Array} to multiply with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the matrix multiplication. 
+\end{DoxyReturn}
+\Hypertarget{classmininumpy_1_1array_1_1_array_acf24c1551edfe92f948333e1db430ede}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_mul\_\_@{\_\_mul\_\_}}
+\index{\_\_mul\_\_@{\_\_mul\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_mul\_\_()}{\_\_mul\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_acf24c1551edfe92f948333e1db430ede} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+mul\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{other}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmininumpy_1_1array_1_1_array_afd4f4e9c82417f984edd30e6417d3b69}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_pow\_\_@{\_\_pow\_\_}}
+\index{\_\_pow\_\_@{\_\_pow\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_pow\_\_()}{\_\_pow\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_afd4f4e9c82417f984edd30e6417d3b69} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+pow\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{other}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmininumpy_1_1array_1_1_array_a88f7aaeaa079f1a5bae9091c3c2d2c86}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_repr\_\_@{\_\_repr\_\_}}
+\index{\_\_repr\_\_@{\_\_repr\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_repr\_\_()}{\_\_repr\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a88f7aaeaa079f1a5bae9091c3c2d2c86} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+repr\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Provides an unambiguous string representation of the array object. 
+
+\begin{DoxyReturn}{Returns}
+A string representation of the object. 
+\end{DoxyReturn}
+\Hypertarget{classmininumpy_1_1array_1_1_array_a547f20d528de9960704c6ba56aa4b767}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_rsub\_\_@{\_\_rsub\_\_}}
+\index{\_\_rsub\_\_@{\_\_rsub\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_rsub\_\_()}{\_\_rsub\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a547f20d528de9960704c6ba56aa4b767} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+rsub\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Implements the right-\/side subtraction (e.\+g., scalar -\/ array). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other operand (scalar). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the elementwise subtraction. 
+\end{DoxyReturn}
+\Hypertarget{classmininumpy_1_1array_1_1_array_aad51652e321a583cf458595e8d0136cd}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_aad51652e321a583cf458595e8d0136cd} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Provides a user-\/friendly string representation of the array. 
+
+\begin{DoxyReturn}{Returns}
+A string that pretty-\/prints the array. 
+\end{DoxyReturn}
+\Hypertarget{classmininumpy_1_1array_1_1_array_a51f577dc8a05ff51f6833d1c629a1c1e}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_sub\_\_@{\_\_sub\_\_}}
+\index{\_\_sub\_\_@{\_\_sub\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_sub\_\_()}{\_\_sub\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a51f577dc8a05ff51f6833d1c629a1c1e} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+sub\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{other}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmininumpy_1_1array_1_1_array_a5e365ecf2492e8a237b4caaaae3812fc}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_\_truediv\_\_@{\_\_truediv\_\_}}
+\index{\_\_truediv\_\_@{\_\_truediv\_\_}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_\_truediv\_\_()}{\_\_truediv\_\_()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a5e365ecf2492e8a237b4caaaae3812fc} 
+mininumpy.\+array.\+Array.\+\_\+\+\_\+truediv\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{other}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmininumpy_1_1array_1_1_array_a36952e211cae761daffba17d4c5f75d8}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_derive\_shape@{\_derive\_shape}}
+\index{\_derive\_shape@{\_derive\_shape}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_derive\_shape()}{\_derive\_shape()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a36952e211cae761daffba17d4c5f75d8} 
+mininumpy.\+array.\+Array.\+\_\+derive\+\_\+shape (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recursively determines the shape of the nested list data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The list or nested list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple representing the shape. 
+\end{DoxyReturn}
+\Hypertarget{classmininumpy_1_1array_1_1_array_a871e07e81221537b832a95ec14e77af7}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_elementwise\_op@{\_elementwise\_op}}
+\index{\_elementwise\_op@{\_elementwise\_op}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_elementwise\_op()}{\_elementwise\_op()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a871e07e81221537b832a95ec14e77af7} 
+mininumpy.\+array.\+Array.\+\_\+elementwise\+\_\+op (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{other}{, }\item[{}]{op}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A helper function to perform elementwise operations. 
+
+Handles operations with a scalar or another array of the same shape.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other operand (scalar or \doxylink{classmininumpy_1_1array_1_1_array}{Array}). \\
+\hline
+{\em op} & A function (e.\+g., from the operator module) to apply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classmininumpy_1_1array_1_1_array}{Array} with the result of the operation. @raises Value\+Error if arrays have mismatched shapes. 
+\end{DoxyReturn}
+\Hypertarget{classmininumpy_1_1array_1_1_array_ab3a8bbec0b1102d42046d73f948e1352}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_flatten@{\_flatten}}
+\index{\_flatten@{\_flatten}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_flatten()}{\_flatten()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_ab3a8bbec0b1102d42046d73f948e1352} 
+mininumpy.\+array.\+Array.\+\_\+flatten (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flattens the multi-\/dimensional data into a 1D list. 
+
+\begin{DoxyReturn}{Returns}
+A 1D list containing all elements of the array. 
+\end{DoxyReturn}
+\Hypertarget{classmininumpy_1_1array_1_1_array_ac086abf24247b34e73263d7086dbad0c}\index{mininumpy.array.Array@{mininumpy.array.Array}!\_validate\_shape@{\_validate\_shape}}
+\index{\_validate\_shape@{\_validate\_shape}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{\_validate\_shape()}{\_validate\_shape()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_ac086abf24247b34e73263d7086dbad0c} 
+mininumpy.\+array.\+Array.\+\_\+validate\+\_\+shape (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{data}{, }\item[{}]{shape}{, }\item[{}]{level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recursively validates that all sub-\/arrays at a certain depth have the same length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to validate. \\
+\hline
+{\em shape} & The target shape. \\
+\hline
+{\em level} & The current recursion depth. @raises Value\+Error if shapes are inconsistent. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmininumpy_1_1array_1_1_array_a91ff8ed15a2ecfcea2a504be1a66dcc9}\index{mininumpy.array.Array@{mininumpy.array.Array}!reshape@{reshape}}
+\index{reshape@{reshape}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{reshape()}{reshape()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a91ff8ed15a2ecfcea2a504be1a66dcc9} 
+mininumpy.\+array.\+Array.\+reshape (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{new\+\_\+shape}{}\end{DoxyParamCaption})}
+
+
+
+Returns a new \doxylink{classmininumpy_1_1array_1_1_array}{Array} with a different shape, without changing its data. 
+
+The new shape must be compatible with the original size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+shape} & A tuple of ints giving the new shape. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classmininumpy_1_1array_1_1_array}{Array} object with the specified shape. @raises Value\+Error if the new shape is not compatible with the array\textquotesingle{}s size. 
+\end{DoxyReturn}
+\Hypertarget{classmininumpy_1_1array_1_1_array_ad41dcbfa6b895b0b59ab5390493071d5}\index{mininumpy.array.Array@{mininumpy.array.Array}!transpose@{transpose}}
+\index{transpose@{transpose}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_ad41dcbfa6b895b0b59ab5390493071d5} 
+mininumpy.\+array.\+Array.\+transpose (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Transposes the array. 
+
+Currently only supports 2D arrays. \begin{DoxyReturn}{Returns}
+A new \doxylink{classmininumpy_1_1array_1_1_array}{Array} object that is the transpose of the original. @raises Value\+Error if the array is not 2D. 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classmininumpy_1_1array_1_1_array_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmininumpy_1_1array_1_1_array_a91203e9c4b113455fb9bde30de09daf0}\index{mininumpy.array.Array@{mininumpy.array.Array}!data@{data}}
+\index{data@{data}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_a91203e9c4b113455fb9bde30de09daf0} 
+mininumpy.\+array.\+Array.\+data = data}
+
+\Hypertarget{classmininumpy_1_1array_1_1_array_af5d26f2e389c8fb295321705b65f956f}\index{mininumpy.array.Array@{mininumpy.array.Array}!ndim@{ndim}}
+\index{ndim@{ndim}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{ndim}{ndim}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_af5d26f2e389c8fb295321705b65f956f} 
+mininumpy.\+array.\+Array.\+ndim = len(self.\+shape)}
+
+\Hypertarget{classmininumpy_1_1array_1_1_array_abde55f487fe1412af64c0f3bb7e761b6}\index{mininumpy.array.Array@{mininumpy.array.Array}!shape@{shape}}
+\index{shape@{shape}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{shape}{shape}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_abde55f487fe1412af64c0f3bb7e761b6} 
+mininumpy.\+array.\+Array.\+shape = self.\+\_\+derive\+\_\+shape(\mbox{\hyperlink{classmininumpy_1_1array_1_1_array_a91203e9c4b113455fb9bde30de09daf0}{data}})}
+
+\Hypertarget{classmininumpy_1_1array_1_1_array_ad5c6282db5f638b3560b081695caac22}\index{mininumpy.array.Array@{mininumpy.array.Array}!size@{size}}
+\index{size@{size}!mininumpy.array.Array@{mininumpy.array.Array}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{classmininumpy_1_1array_1_1_array_ad5c6282db5f638b3560b081695caac22} 
+mininumpy.\+array.\+Array.\+size = reduce(operator.\+mul, self.\+shape, 1)}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mininumpy/\mbox{\hyperlink{array_8py}{array.\+py}}\end{DoxyCompactItemize}

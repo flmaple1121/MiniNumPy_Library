@@ -1,0 +1,153 @@
+\doxysection{mininumpy.\+linalg Namespace Reference}
+\hypertarget{namespacemininumpy_1_1linalg}{}\label{namespacemininumpy_1_1linalg}\index{mininumpy.linalg@{mininumpy.linalg}}
+
+
+Mini\+Num\+Py Linear Algebra Module.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemininumpy_1_1linalg_a32c574ff1af2fb71a3a3c0ec9841caf7}{dot}} (a, b)
+\begin{DoxyCompactList}\small\item\em Computes the dot product of two arrays. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemininumpy_1_1linalg_a0a08a792e299bea0eb90a773fdb8638d}{matmul}} (a, b)
+\begin{DoxyCompactList}\small\item\em Performs matrix multiplication on two 2D arrays. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemininumpy_1_1linalg_a6aca2566a269073928d88636e676b457}{norm}} (a)
+\begin{DoxyCompactList}\small\item\em Calculates the vector (L2) or matrix (Frobenius) norm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemininumpy_1_1linalg_a58adfc0a1e321f90e6eae1191db0f400}{det}} (a)
+\begin{DoxyCompactList}\small\item\em Calculates the determinant of a square 2D array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemininumpy_1_1linalg_a8c34af6d4d3235c86d9b0fbd353af749}{inv}} (a)
+\begin{DoxyCompactList}\small\item\em Calculates the inverse of a square 2D array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemininumpy_1_1linalg_a0938a912bce74a963f0e495ca0759d5b}{eig}} (a)
+\begin{DoxyCompactList}\small\item\em (Bonus) Placeholder for eigenvalue and eigenvector calculation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mini\+Num\+Py Linear Algebra Module. 
+
+Contains functions for linear algebra operations like dot product, matrix multiplication, determinant, and inverse. 
+
+\label{doc-func-members}
+\Hypertarget{namespacemininumpy_1_1linalg_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacemininumpy_1_1linalg_a58adfc0a1e321f90e6eae1191db0f400}\index{mininumpy.linalg@{mininumpy.linalg}!det@{det}}
+\index{det@{det}!mininumpy.linalg@{mininumpy.linalg}}
+\doxysubsubsection{\texorpdfstring{det()}{det()}}
+{\footnotesize\ttfamily \label{namespacemininumpy_1_1linalg_a58adfc0a1e321f90e6eae1191db0f400} 
+mininumpy.\+linalg.\+det (\begin{DoxyParamCaption}\item[{}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the determinant of a square 2D array. 
+
+This implementation uses recursive Laplace expansion. It is not efficient for large matrices but is simple to implement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & A square 2D \doxylink{classmininumpy_1_1array_1_1_array}{Array}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The determinant of the array. @raises Value\+Error if the array is not square or not 2D. 
+\end{DoxyReturn}
+\Hypertarget{namespacemininumpy_1_1linalg_a32c574ff1af2fb71a3a3c0ec9841caf7}\index{mininumpy.linalg@{mininumpy.linalg}!dot@{dot}}
+\index{dot@{dot}!mininumpy.linalg@{mininumpy.linalg}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{namespacemininumpy_1_1linalg_a32c574ff1af2fb71a3a3c0ec9841caf7} 
+mininumpy.\+linalg.\+dot (\begin{DoxyParamCaption}\item[{}]{a}{, }\item[{}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Computes the dot product of two arrays. 
+
+
+\begin{DoxyItemize}
+\item If both are 1D, it is the inner product.
+\item If both are 2D, it is matrix multiplication.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First input array. \\
+\hline
+{\em b} & Second input array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of a and b. @raises Value\+Error if dimensions are incompatible. 
+\end{DoxyReturn}
+\Hypertarget{namespacemininumpy_1_1linalg_a0938a912bce74a963f0e495ca0759d5b}\index{mininumpy.linalg@{mininumpy.linalg}!eig@{eig}}
+\index{eig@{eig}!mininumpy.linalg@{mininumpy.linalg}}
+\doxysubsubsection{\texorpdfstring{eig()}{eig()}}
+{\footnotesize\ttfamily \label{namespacemininumpy_1_1linalg_a0938a912bce74a963f0e495ca0759d5b} 
+mininumpy.\+linalg.\+eig (\begin{DoxyParamCaption}\item[{}]{a}{}\end{DoxyParamCaption})}
+
+
+
+(Bonus) Placeholder for eigenvalue and eigenvector calculation. 
+
+Calculating eigenvalues is a complex numerical problem (e.\+g., using QR algorithm) and is beyond the scope of a simple implementation from scratch.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & A square 2D \doxylink{classmininumpy_1_1array_1_1_array}{Array}. @raises Not\+Implemented\+Error \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacemininumpy_1_1linalg_a8c34af6d4d3235c86d9b0fbd353af749}\index{mininumpy.linalg@{mininumpy.linalg}!inv@{inv}}
+\index{inv@{inv}!mininumpy.linalg@{mininumpy.linalg}}
+\doxysubsubsection{\texorpdfstring{inv()}{inv()}}
+{\footnotesize\ttfamily \label{namespacemininumpy_1_1linalg_a8c34af6d4d3235c86d9b0fbd353af749} 
+mininumpy.\+linalg.\+inv (\begin{DoxyParamCaption}\item[{}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the inverse of a square 2D array. 
+
+The inverse is calculated using the formula\+: inv(\+A) = (1/det(A)) \texorpdfstring{$\ast$}{*} adj(\+A), where adj(\+A) is the adjugate matrix (transpose of the cofactor matrix).
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & A square, invertible 2D \doxylink{classmininumpy_1_1array_1_1_array}{Array}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The inverse of the array. @raises Value\+Error if the array is not square or is singular (det=0). 
+\end{DoxyReturn}
+\Hypertarget{namespacemininumpy_1_1linalg_a0a08a792e299bea0eb90a773fdb8638d}\index{mininumpy.linalg@{mininumpy.linalg}!matmul@{matmul}}
+\index{matmul@{matmul}!mininumpy.linalg@{mininumpy.linalg}}
+\doxysubsubsection{\texorpdfstring{matmul()}{matmul()}}
+{\footnotesize\ttfamily \label{namespacemininumpy_1_1linalg_a0a08a792e299bea0eb90a773fdb8638d} 
+mininumpy.\+linalg.\+matmul (\begin{DoxyParamCaption}\item[{}]{a}{, }\item[{}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Performs matrix multiplication on two 2D arrays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & A 2D \doxylink{classmininumpy_1_1array_1_1_array}{Array} with shape (m, n). \\
+\hline
+{\em b} & A 2D \doxylink{classmininumpy_1_1array_1_1_array}{Array} with shape (n, p). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new 2D \doxylink{classmininumpy_1_1array_1_1_array}{Array} with shape (m, p). @raises Value\+Error if arrays are not 2D or shapes are incompatible. 
+\end{DoxyReturn}
+\Hypertarget{namespacemininumpy_1_1linalg_a6aca2566a269073928d88636e676b457}\index{mininumpy.linalg@{mininumpy.linalg}!norm@{norm}}
+\index{norm@{norm}!mininumpy.linalg@{mininumpy.linalg}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily \label{namespacemininumpy_1_1linalg_a6aca2566a269073928d88636e676b457} 
+mininumpy.\+linalg.\+norm (\begin{DoxyParamCaption}\item[{}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the vector (L2) or matrix (Frobenius) norm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The input array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The norm of the array. 
+\end{DoxyReturn}
