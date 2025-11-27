@@ -4,6 +4,36 @@ import math
 import operator
 from functools import reduce
 
+"""!
+@brief The list of public symbols exported by the mininumpy module.
+These symbols are available when using `from mininumpy import *`.
+"""
+__all__ = [
+    # Classes
+    'Array',      #<! The core N-dimensional array class.
+
+    # Array Creation
+    'array',      #<! Create an array from a list or nested list.
+    'zeros',      #<! Create a new array of given shape, filled with zeros.
+    'ones',       #<! Create a new array of given shape, filled with ones.
+    'eye',        #<! Return a 2-D array with ones on the diagonal and zeros elsewhere.
+    'arange',     #<! Return evenly spaced values within a given interval.
+    'linspace',   #<! Return evenly spaced numbers over a specified interval.
+
+    # Math Functions
+    'exp',        #<! Calculate the exponential of all elements in the input array.
+    'log',        #<! Natural logarithm, element-wise.
+    'sqrt',       #<! Return the non-negative square-root of an array, element-wise.
+    'abs',        #<! Calculate the absolute value element-wise.
+
+    # Reductions
+    'sum',        #<! Sum of array elements over a given axis.
+    'mean',       #<! Compute the arithmetic mean along the specified axis.
+    'min',        #<! Return the minimum of an array or minimum along an axis.
+    'max',        #<! Return the maximum of an array or maximum along an axis.
+    'argmin',     #<! Returns the indices of the minimum values along an axis.
+    'argmax'      #<! Returns the indices of the maximum values along an axis.
+]
 
 class Array:
     """!
@@ -97,7 +127,7 @@ class Array:
 
         def _build_reshaped(lst, shape):
             if not shape:
-                return lst
+                return lst[0]
             n = shape[0]
             sub_len = len(lst) // n
             return [_build_reshaped(lst[i * sub_len:(i + 1) * sub_len], shape[1:]) for i in range(n)]
@@ -164,18 +194,43 @@ class Array:
         return Array(_apply_op_arrays(self.data, other.data))
 
     def __add__(self, other):
+        """!
+        @brief Implements element-wise addition (operator +).
+        @param other Scalar or Array to add.
+        @return New Array with the result.
+        """
         return self._elementwise_op(other, operator.add)
 
     def __sub__(self, other):
+        """!
+        @brief Implements element-wise subtraction (operator -).
+        @param other Scalar or Array to subtract.
+        @return New Array with the result.
+        """
         return self._elementwise_op(other, operator.sub)
 
     def __mul__(self, other):
+        """!
+        @brief Implements element-wise multiplication (operator *).
+        @param other Scalar or Array to multiply.
+        @return New Array with the result.
+        """
         return self._elementwise_op(other, operator.mul)
 
     def __truediv__(self, other):
+        """!
+        @brief Implements element-wise division (operator /).
+        @param other Scalar or Array to divide by.
+        @return New Array with the result.
+        """
         return self._elementwise_op(other, operator.truediv)
 
     def __pow__(self, other):
+        """!
+        @brief Implements element-wise power (operator **).
+        @param other Exponent (Scalar or Array).
+        @return New Array with the result.
+        """
         return self._elementwise_op(other, operator.pow)
 
     def __matmul__(self, other):
