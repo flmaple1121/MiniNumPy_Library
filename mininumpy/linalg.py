@@ -5,8 +5,8 @@
 Contains functions for linear algebra operations like dot product, matrix multiplication,
 determinant, and inverse.
 """
-
-from .array import Array
+import math
+from .array import Array, zeros
 
 
 def dot(a, b):
@@ -55,7 +55,8 @@ def matmul(a, b):
     # Transpose b for easier row-wise access
     b_t = b.transpose()
 
-    new_data = [[0.0 for _ in range(p)] for _ in range(m)]
+    result_array = zeros((m, p))
+    new_data = result_array.data
     for i in range(m):
         for j in range(p):
             # Dot product of row i of a and column j of b
@@ -64,7 +65,7 @@ def matmul(a, b):
             sum_val = sum(x * y for x, y in zip(row_a, col_b))
             new_data[i][j] = sum_val
 
-    return Array(new_data)
+    return result_array
 
 
 def norm(a):
@@ -72,11 +73,11 @@ def norm(a):
     @brief Calculates the vector (L2) or matrix (Frobenius) norm.
 
     @param a The input array.
-    @return The norm of the array.
+    @return The norm of the array (float).
     """
-    from .array import sqrt, sum
+    # from .array import sqrt, sum
     # This is equivalent to sqrt(sum(a**2))
-    return sqrt(sum(x * x for x in a._flatten()))
+    return math.sqrt(sum(x*x for x in a._flatten()))
 
 
 def det(a):
@@ -134,7 +135,8 @@ def inv(a):
         return Array([[1.0 / a.data[0][0]]])
 
     # --- Calculate Cofactor Matrix ---
-    cofactor_data = [[0.0 for _ in range(n)] for _ in range(n)]
+    cofactor_matrix = zeros((n, n))
+    cofactor_data = cofactor_matrix.data
     for i in range(n):
         for j in range(n):
             # Create the submatrix
@@ -143,8 +145,6 @@ def inv(a):
 
             sign = (-1) ** (i + j)
             cofactor_data[i][j] = sign * det(sub_matrix)
-
-    cofactor_matrix = Array(cofactor_data)
 
     # --- Adjugate is the transpose of the cofactor matrix ---
     adjugate_matrix = cofactor_matrix.transpose()

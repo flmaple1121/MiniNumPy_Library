@@ -1,0 +1,86 @@
+# ==========================
+# Python Essentials
+# ==========================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================
+# Virtual Environments
+# ==========================
+# Common names for virtual environment directories
+venv/
+env/
+.env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ==========================
+# PyCharm (JetBrains)
+# ==========================
+# Project-specific settings that shouldn't be shared
+.idea/
+*.iml
+
+# ==========================
+# Jupyter Notebook
+# ==========================
+# Checkpoints created by Jupyter automatically
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython data
+profile_default/
+ipython_config.py
+
+# ==========================
+# Documentation (Doxygen)
+# ==========================
+# Ignore the generated documentation folders
+html/
+latex/
+# Keep the Doxyfile, but ignore Doxygen's working files if any
+
+# ==========================
+# Operating System Files
+# ==========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==========================
+# User Specific / Testing
+# ==========================
+# Local test file (as requested)
+test.py
+
+# Temporary data or logs
+*.log
+tmp/
+temp/
