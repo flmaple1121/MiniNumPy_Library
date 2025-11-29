@@ -78,9 +78,8 @@ Desktop.ini
 # User Specific / Testing
 # ==========================
 # Local test file (as requested)
-test.py
 
 # Temporary data or logs
 *.log
-tmp/
+TP/
 temp/
