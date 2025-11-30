@@ -225,8 +225,8 @@ def inv(a):
     # Solve for each column of Identity
     for j in range(n):
         # Create standard basis vector e_j (e.g., [0, 1, 0...])
-        e_j = [1.0 if i == j else 0.0 for i in range(n)]
-
+        e_j_list = [1.0 if i == j else 0.0 for i in range(n)]
+        e_j = Array(e_j_list)
         # Solve Ax = e_j
         x_j = _solve_lu(L, U, P, e_j)
 
