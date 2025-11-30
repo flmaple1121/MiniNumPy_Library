@@ -10,4 +10,4 @@ classes and functions for easier access.
 from .array import *
 from . import linalg
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
