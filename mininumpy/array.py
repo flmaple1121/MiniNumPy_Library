@@ -2,6 +2,7 @@
 
 import math
 import operator
+import builtins
 from functools import reduce
 
 """!
@@ -123,7 +124,7 @@ class Array:
         if new_size != self.size:
             raise ValueError(f"Cannot reshape array of size {self.size} into shape {new_shape}")
 
-        flat_list = self._flatten()
+        flat_list = self.flatten()
 
         def _build_reshaped(lst, shape):
             if not shape:
@@ -134,7 +135,7 @@ class Array:
 
         return Array(_build_reshaped(flat_list, new_shape))
 
-    def _flatten(self):
+    def flatten(self):
         """!
         @brief Flattens the multi-dimensional data into a 1D list.
         @return A 1D list containing all elements of the array.
@@ -378,7 +379,7 @@ def abs(a):
 def sum(a):
     """! @brief Computes the sum of all array elements. """
     # Using dictionary access is more robust against namespace issues.
-    return __builtins__['sum'](a._flatten())
+    return builtins.sum(a.flatten())
 
 
 def mean(a):
@@ -388,21 +389,21 @@ def mean(a):
 
 def min(a):
     """! @brief Finds the minimum value among all array elements. """
-    return __builtins__['min'](a._flatten())
+    return builtins.min(a.flatten())
 
 
 def max(a):
     """! @brief Finds the maximum value among all array elements. """
-    return __builtins__['max'](a._flatten())
+    return builtins.max(a.flatten())
 
 
 def argmin(a):
     """! @brief Finds the index of the minimum value in the flattened array. """
-    flat_list = a._flatten()
+    flat_list = a.flatten()
     return flat_list.index(min(a))
 
 
 def argmax(a):
     """! @brief Finds the index of the maximum value in the flattened array. """
-    flat_list = a._flatten()
+    flat_list = a.flatten()
     return flat_list.index(max(a))
