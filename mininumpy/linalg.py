@@ -219,8 +219,7 @@ def inv(a):
         if abs(U.data[i][i]) < 1e-12:
             raise ValueError("Matrix is singular and cannot be inverted.")
 
-    inv_matrix = zeros((n, n))
-    inv_data = inv_matrix.data  # Get reference to modify data
+    inv_transposed_data = []
 
     # Solve for each column of Identity
     for j in range(n):
@@ -229,12 +228,11 @@ def inv(a):
         e_j = Array(e_j_list)
         # Solve Ax = e_j
         x_j = _solve_lu(L, U, P, e_j)
+        # Store result in the j-th row of inverse transposed matrix
+        inv_transposed_data.append(x_j)
 
-        # Store result in the j-th column of inverse matrix
-        for i in range(n):
-            inv_data[i][j] = x_j[i]
-
-    return inv_matrix
+    inv_transposed_matrix = Array(inv_transposed_data)
+    return inv_transposed_matrix.transpose()
 
 
 def eig(a):
