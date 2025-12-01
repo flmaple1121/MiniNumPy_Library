@@ -371,7 +371,7 @@ def sqrt(a):
 
 def abs(a):
     """! @brief Computes the absolute value of all elements. """
-    return _apply_func_to_array(a, __builtins__.abs)
+    return _apply_func_to_array(a, builtins.abs)
 
 
 # --- Reductions ---
