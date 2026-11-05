@@ -19,7 +19,7 @@ def dot(a, b):
     @param a First input array.
     @param b Second input array.
     @return The dot product of a and b.
-    @raises ValueError if dimensions are incompatible.
+    @exception ValueError if dimensions are incompatible.
     """
     if a.ndim == 1 and b.ndim == 1:
         if a.shape[0] != b.shape[0]:
@@ -41,7 +41,7 @@ def matmul(a, b):
     @param a A 2D Array with shape (m, n).
     @param b A 2D Array with shape (n, p).
     @return A new 2D Array with shape (m, p).
-    @raises ValueError if arrays are not 2D or shapes are incompatible.
+    @exception ValueError if arrays are not 2D or shapes are incompatible.
     """
     if a.ndim != 2 or b.ndim != 2:
         raise ValueError("Matrix multiplication is only supported for 2D arrays.")
@@ -91,7 +91,7 @@ def lu_decompose(a):
             - L is the lower triangular Array.
             - U is the upper triangular Array.
             - swaps is the number of row swaps performed (for determinant sign).
-    @raises ValueError if matrix is not square.
+    @exception ValueError if matrix is not square.
     """
     if a.ndim != 2 or a.shape[0] != a.shape[1]:
         raise ValueError("LU decomposition is only for square matrices.")
@@ -209,7 +209,7 @@ def inv(a):
 
     @param a The input square Array.
     @return The inverse Array.
-    @raises ValueError if matrix is singular.
+    @exception ValueError if matrix is singular.
     """
     n = a.shape[0]
     P, L, U, _ = lu_decompose(a)
@@ -243,6 +243,6 @@ def eig(a):
     and is beyond the scope of a simple implementation from scratch.
 
     @param a A square 2D Array.
-    @raises NotImplementedError
+    @exception NotImplementedError
     """
     raise NotImplementedError("Eigenvalue calculation is a bonus and not implemented.")

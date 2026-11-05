@@ -28,12 +28,12 @@ __all__ = [
     'abs',        #<! Calculate the absolute value element-wise.
 
     # Reductions
-    'sum',        #<! Sum of array elements over a given axis.
-    'mean',       #<! Compute the arithmetic mean along the specified axis.
-    'min',        #<! Return the minimum of an array or minimum along an axis.
-    'max',        #<! Return the maximum of an array or maximum along an axis.
-    'argmin',     #<! Returns the indices of the minimum values along an axis.
-    'argmax'      #<! Returns the indices of the maximum values along an axis.
+    'sum',        #<! Sum of all array elements.
+    'mean',       #<! Compute the arithmetic mean of all elements.
+    'min',        #<! Return the minimum of all elements.
+    'max',        #<! Return the maximum of all elements.
+    'argmin',     #<! Return the flat index of the first minimum.
+    'argmax'      #<! Return the flat index of the first maximum.
 ]
 
 class Array:
@@ -52,8 +52,8 @@ class Array:
         determines the shape, and calculates the total size.
 
         @param data A Python list or nested list.
-        @raises TypeError if data is not a list.
-        @raises ValueError if rows have inconsistent lengths.
+        @exception TypeError if data is not a list.
+        @exception ValueError if rows have inconsistent lengths.
         """
         if not isinstance(data, list):
             raise TypeError("Input data must be a list or nested list.")
@@ -83,7 +83,7 @@ class Array:
         @param data The data to validate.
         @param shape The target shape.
         @param level The current recursion depth.
-        @raises ValueError if shapes are inconsistent.
+        @exception ValueError if shapes are inconsistent.
         """
         if level >= len(shape) - 1:
             return
@@ -118,7 +118,7 @@ class Array:
 
         @param new_shape A tuple of ints giving the new shape.
         @return A new Array object with the specified shape.
-        @raises ValueError if the new shape is not compatible with the array's size.
+        @exception ValueError if the new shape is not compatible with the array's size.
         """
         new_size = reduce(operator.mul, new_shape, 1)
         if new_size != self.size:
@@ -156,7 +156,7 @@ class Array:
         """!
         @brief Transposes the array. Currently only supports 2D arrays.
         @return A new Array object that is the transpose of the original.
-        @raises ValueError if the array is not 2D.
+        @exception ValueError if the array is not 2D.
         """
         if self.ndim != 2:
             raise ValueError("Transpose is only supported for 2D arrays.")
@@ -174,7 +174,7 @@ class Array:
         @param other The other operand (scalar or Array).
         @param op A function (e.g., from the operator module) to apply.
         @return A new Array with the result of the operation.
-        @raises ValueError if arrays have mismatched shapes.
+        @exception ValueError if arrays have mismatched shapes.
         """
         if isinstance(other, (int, float)):
             def _apply_op(data):
